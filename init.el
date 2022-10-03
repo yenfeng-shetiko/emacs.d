@@ -1,3 +1,4 @@
+
 ;;;must key
 (global-set-key (kbd "M-h") (lambda () (interactive) (find-file "~/.emacs")))
 (global-set-key (kbd "M-SPC") 'set-mark-command)
@@ -114,6 +115,15 @@
 (when window-system
   (setq jr-customize-bg-color "#314f4f"))
 (server-start)
+(add-hook 'after-init-hook #'doom-modeline-mode)
+
+;;;must repositories
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -121,8 +131,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default-tab-width 4 t)
- '(frame-title-format (quote ("%b || Emacs ||" (:eval (current-time-string)))) t)
+ '(frame-title-format '("%b || Emacs ||" (:eval (current-time-string))) t)
  '(inhibit-startup-screen t)
+ '(package-selected-packages '(restart-emacs doom-modeline))
  '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
