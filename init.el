@@ -1,5 +1,5 @@
 ;;;must key
-(global-set-key (kbd "M-h") (lambda () (interactive) (find-file "~/.emacs")))
+(global-set-key (kbd "M-h") (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "M-[") 'set-mark-command)
 (global-set-key (kbd "C-x k") (lambda () (interactive) (kill-buffer (current-buffer))))
@@ -136,6 +136,3 @@
   (custom-set-faces
  '(default ((t (:background "black"))))))
 (put 'dired-find-alternate-file 'disabled nil)
-————————————————
-版权声明：本文为CSDN博主「JoyerHuang_悦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/DelphiNew/article/details/6732295
